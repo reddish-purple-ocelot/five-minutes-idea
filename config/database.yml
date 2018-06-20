@@ -1,5 +1,5 @@
 default: &default
-  adapter: postgrsql
+  adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
@@ -7,8 +7,8 @@ default: &default
 development:
   <<: *default
   database: db/dev-five-minutes-idea
-  username: <%= Rails.application.secrets.database[:username] %>
-  password: <%= Rails.application.secrets.database[:password] %>
+  username: <%= Rails.application.secrets.db[:user] %>
+  password: <%= Rails.application.secrets.db[:pass] %>
 
 test:
   <<: *default
