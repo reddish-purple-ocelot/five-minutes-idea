@@ -34,5 +34,6 @@ end
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'jquery-rails'
 gem 'geocoder'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

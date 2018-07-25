@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :rooms
+  get 'messages/create'
+  # get 'room_users/create'
+  # get 'room_users/destroy'
+  resources :rooms do
+    resource :room_users
+    resources :messages
+  end
   devise_for :users
-  get 'rooms/show'
+  # get 'rooms/show'
 	root to: 'places#index'
   resources :places do
 		collection do

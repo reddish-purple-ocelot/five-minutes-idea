@@ -1,4 +1,22 @@
-<h1>Chat Room</h1>
-<div id="messages">
+<h1><%= @room.name %></h1>
+<p><strong>Name:</strong>	<%= @room.name %></p>
+
+
+<div data-behavior="messages">
+	<% @messages.each do |message| %>
+		<div><strong><%= message.user.username %></strong> <%= message.content %></div>
+	<% end %>
+</div>
+
+<%= form_for([@room, Message.new]) do |f| %>
+	<%= f.text_area :content, rows: 1, class: "form-control", autofocus: true %>
+<% end %>
+
+<!-- <div id="messages">
 <%= render @messages %>
 </div>
+
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>
+ -->

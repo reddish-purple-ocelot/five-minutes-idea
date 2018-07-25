@@ -1,10 +1,12 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "room_channel"
+  	current_user.rooms.each do |room|
+	    stream_from "room:#{room.id}"
+	  end
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+  	stop_all_streams
   end
 
   def speak(data)
