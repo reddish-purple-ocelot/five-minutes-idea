@@ -9,12 +9,11 @@ fetch(url, params).then( resp => resp.json() ).then( places =>  initMap(places))
 
 
 function initMap(places) {
-  var uluru = new google.maps.LatLng(50.451699, 30.552512);
+  var uluru = {lat: 50.451699, lng: 30.552512};
 
 	var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
-    center: uluru,
-    mapTypeId: 'terrain'
+    center: uluru,    mapTypeId: 'terrain'
     // mapTypeId: "roadmap"
   });
 
