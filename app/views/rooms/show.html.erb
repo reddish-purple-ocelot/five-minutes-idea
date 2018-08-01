@@ -1,10 +1,8 @@
-<h1><%= @room.name %></h1>
-<p><strong>Name:</strong>	<%= @room.name %></p>
+<h1><strong>Name:</strong>	<%= @room.name %></h1>
 
-
-<div data-behavior="messages">
+<div data-behavior="messages" data-room-id="<%= @room.id %>">
 	<% @messages.each do |message| %>
-		<div><strong><%= message.user.username %></strong> <%= message.content %></div>
+		<%= render message %>
 	<% end %>
 </div>
 
@@ -12,11 +10,3 @@
 	<%= f.text_area :content, rows: 1, class: "form-control", autofocus: true %>
 <% end %>
 
-<!-- <div id="messages">
-<%= render @messages %>
-</div>
-
-
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
- -->
