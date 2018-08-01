@@ -1,5 +1,7 @@
 {
   "name": "five-minutes-idea",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "turbolinks": "^5.1.1"
+  }
 }
