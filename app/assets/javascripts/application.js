@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
+//= require cable
 //= require_tree .
